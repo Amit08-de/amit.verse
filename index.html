@@ -1,11 +1,124 @@
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Amit Bhowmik Portfolio</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #F4F8FB, #EEF2FF);
+      color: #0F172A;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    p {
+      font-size: 1.2rem;
+      opacity: 0.7;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      border: none;
+      background: #3B82F6;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #2563EB;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      margin: 15px;
+      border-radius: 12px;
+      display: inline-block;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+  </style>
 </head>
+
 <body>
-  <h1>Hello, I am Amit Bhowmik</h1>
-  <p>My portfolio is live 🚀</p>
+
+<header>
+  <h1>Amit Bhowmik</h1>
+  <p>Exploring Consumer Behaviour | Researcher | Future Business Leader</p>
+  <button onclick="document.getElementById('about').scrollIntoView()">Explore</button>
+</header>
+
+<section id="about">
+  <h2>About Me</h2>
+  <div class="card">PGDM Student</div>
+  <div class="card">Research-Oriented Thinker</div>
+  <div class="card">Travel Experience (India)</div>
+</section>
+
+<section>
+  <h2>Research & Insights</h2>
+  <div class="card">
+    <h3>Does AI Kill Human Intelligence?</h3>
+    <p>Exploring impact of AI on thinking ability</p>
+  </div>
+</section>
+
+<section>
+  <h2>Work</h2>
+  <div class="card">Research Report</div>
+  <div class="card">Academic Projects</div>
+</section>
+
+<section>
+  <h2>Presentations</h2>
+  <div class="card">Marketing & Consumer Behaviour</div>
+</section>
+
+<section>
+  <h2>AI Generated Videos</h2>
+  <div class="card">Storytelling Videos</div>
+</section>
+
+<section>
+  <h2>LinkedIn</h2>
+  <div class="card">200+ Connections</div>
+  <div class="card">No Article Followers</div>
+</section>
+
+<section>
+  <h2>Contact</h2>
+  <p>Let’s Connect</p>
+</section>
+
 </body>
 </html>
