@@ -1,124 +1,204 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Amit Bhowmik Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amit Bhowmik Portfolio</title>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #F4F8FB, #EEF2FF);
-      color: #0F172A;
-      scroll-behavior: smooth;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #eef2ff, #f8fafc);
+  overflow-x: hidden;
+}
 
-    header {
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+/* Floating animation */
+@keyframes float {
+  0% {transform: translateY(0px);}
+  50% {transform: translateY(-20px);}
+  100% {transform: translateY(0px);}
+}
 
-    h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
+/* Hero Section */
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle at top, #dbeafe, #f8fafc);
+  text-align: center;
+}
 
-    p {
-      font-size: 1.2rem;
-      opacity: 0.7;
-    }
+h1 {
+  font-size: 3rem;
+  color: #1e293b;
+}
 
-    button {
-      margin-top: 20px;
-      padding: 12px 24px;
-      border: none;
-      background: #3B82F6;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+.tagline {
+  color: #475569;
+  margin-top: 10px;
+}
 
-    button:hover {
-      background: #2563EB;
-      transform: translateY(-2px);
-    }
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  border: none;
+  background: #3b82f6;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
+button:hover {
+  transform: scale(1.1);
+}
 
-    .card {
-      background: white;
-      padding: 20px;
-      margin: 15px;
-      border-radius: 12px;
-      display: inline-block;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      transition: 0.3s;
-    }
+/* Floating circles */
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.2;
+  animation: float 6s infinite ease-in-out;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
-  </style>
+.c1 {width: 100px; height: 100px; background:#3b82f6; top:10%; left:10%;}
+.c2 {width: 150px; height: 150px; background:#6366f1; top:60%; left:80%;}
+.c3 {width: 80px; height: 80px; background:#0ea5e9; top:30%; left:70%;}
+
+/* Section */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255,255,255,0.6);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  border-radius: 15px;
+  width: 220px;
+  transition: 0.4s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.05);
+}
+
+/* Research Box */
+.research {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  width: 60%;
+  margin: auto;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: 0.4s;
+}
+
+.research:hover {
+  transform: scale(1.03);
+}
+
+/* Fade animation */
+.fade {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
 </head>
 
 <body>
 
+<!-- Floating elements -->
+<div class="circle c1"></div>
+<div class="circle c2"></div>
+<div class="circle c3"></div>
+
 <header>
   <h1>Amit Bhowmik</h1>
-  <p>Exploring Consumer Behaviour | Researcher | Future Business Leader</p>
-  <button onclick="document.getElementById('about').scrollIntoView()">Explore</button>
+  <p class="tagline">Traveller | Consumer Behaviour Explorer | Athlete</p>
+  <button onclick="scrollToSection()">Explore</button>
 </header>
 
-<section id="about">
+<section id="about" class="fade">
   <h2>About Me</h2>
-  <div class="card">PGDM Student</div>
-  <div class="card">Research-Oriented Thinker</div>
-  <div class="card">Travel Experience (India)</div>
-</section>
-
-<section>
-  <h2>Research & Insights</h2>
-  <div class="card">
-    <h3>Does AI Kill Human Intelligence?</h3>
-    <p>Exploring impact of AI on thinking ability</p>
+  <div class="cards">
+    <div class="card">PGDM Student</div>
+    <div class="card">Research-Oriented Thinker</div>
+    <div class="card">Travel Experience (India)</div>
   </div>
 </section>
 
-<section>
+<section class="fade">
+  <h2>My Identity</h2>
+  <div class="cards">
+    <div class="card">🌍 Traveller</div>
+    <div class="card">🧠 Consumer Behaviour Explorer</div>
+    <div class="card">🏏 Athlete</div>
+  </div>
+</section>
+
+<section class="fade">
+  <h2>Research & Insights</h2>
+  <div class="research">
+    <h3>Does AI Kill Human Intelligence?</h3>
+    <p>Exploring the impact of AI on human thinking ability and decision-making.</p>
+  </div>
+</section>
+
+<section class="fade">
   <h2>Work</h2>
-  <div class="card">Research Report</div>
-  <div class="card">Academic Projects</div>
+  <div class="cards">
+    <div class="card">📄 Research Paper</div>
+    <div class="card">📊 Reports</div>
+    <div class="card">🎤 Presentations</div>
+    <div class="card">🎬 AI Generated Videos</div>
+  </div>
 </section>
 
-<section>
-  <h2>Presentations</h2>
-  <div class="card">Marketing & Consumer Behaviour</div>
+<section class="fade">
+  <h2>Professional Presence</h2>
+  <div class="cards">
+    <div class="card">200+ Connections</div>
+    <div class="card">Active Research Contributions</div>
+  </div>
 </section>
 
-<section>
-  <h2>AI Generated Videos</h2>
-  <div class="card">Storytelling Videos</div>
-</section>
+<script>
+function scrollToSection() {
+  document.getElementById("about").scrollIntoView({behavior: "smooth"});
+}
 
-<section>
-  <h2>LinkedIn</h2>
-  <div class="card">200+ Connections</div>
-  <div class="card">No Article Followers</div>
-</section>
+// Fade animation on scroll
+const faders = document.querySelectorAll(".fade");
 
-<section>
-  <h2>Contact</h2>
-  <p>Let’s Connect</p>
-</section>
+window.addEventListener("scroll", () => {
+  faders.forEach(el => {
+    const top = el.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      el.classList.add("show");
+    }
+  });
+});
+</script>
 
 </body>
 </html>
